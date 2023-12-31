@@ -1,7 +1,9 @@
-# DApp on Hedera Hashgraph <img src="https://github.com/Harshilmalhotra/DApp-Hedera/assets/111488708/24f4f6df-7ce3-4275-92b7-a2e80edb7023" height=20% width=20% align="right"> 
+<img src="https://github.com/Harshilmalhotra/DApp-Hedera/assets/111488708/24f4f6df-7ce3-4275-92b7-a2e80edb7023" height=20% width=20% align="right"> 
+<br>
 
-<br>
-<br>
+# DApp on Hedera Hashgraph 
+
+
 <br>
 <br>
 <br>
