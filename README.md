@@ -7,7 +7,10 @@ Imagine a decentralized world where digital interactions are secure, transparent
 
 ## What it does
 
+Our DApp on Hedera Hashgraph leverages decentralized consensus to enable secure, transparent, and efficient applications. It facilitates peer-to-peer transactions, tokenization, and smart contracts, ensuring trust without intermediaries. With Hedera's fast and fair consensus algorithm, DApps on this platform excel in decentralized finance, supply chain transparency, and identity management. From NFT platforms to gaming and decentralized governance, Hedera DApps showcase the versatility of blockchain technology, providing users with a seamless and trustworthy decentralized experience.
+
 ## How we built it
+
 
 ## Challenges we ran into
 
