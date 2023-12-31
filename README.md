@@ -1,6 +1,12 @@
-## Inspiration <img src="https://github.com/Harshilmalhotra/DApp-Hedera/assets/111488708/24f4f6df-7ce3-4275-92b7-a2e80edb7023" height=20% width=20% align="right">
+# DApp on Hedera Hashgraph <img src="https://github.com/Harshilmalhotra/DApp-Hedera/assets/111488708/24f4f6df-7ce3-4275-92b7-a2e80edb7023" height=20% width=20% align="right"> 
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
+## Inspiration 
 
 Imagine a decentralized world where digital interactions are secure, transparent, and lightning-fast. Our DApp, built on Hedera Hashgraph, is at the forefront of this transformation. By leveraging the power of Hedera's fast and fair consensus algorithm, our decentralized application ensures trust and immutability in every transaction. From secure financial transactions to transparent supply chains, our DApp opens new possibilities for industries seeking efficiency and trust in a decentralized future.
 <br>
@@ -8,6 +14,7 @@ Imagine a decentralized world where digital interactions are secure, transparent
 ## What it does
 
 Our DApp based on Hedera Hashgraph leverages decentralized consensus to enable secure, transparent, and efficient applications. It facilitates peer-to-peer transactions, tokenization, and smart contracts, ensuring trust without intermediaries. With Hedera's fast and fair consensus algorithm, DApps on this platform excel in decentralized finance, supply chain transparency, and identity management. From NFT platforms to gaming and decentralized governance, Hedera DApps showcase the versatility of blockchain technology, providing users with a seamless and trustworthy decentralized experience.
+<br>
 
 ## How we built it
 
@@ -22,16 +29,20 @@ Our DApp based on Hedera Hashgraph leverages decentralized consensus to enable s
 
 #### Carbon Components Svelte
 <a href="https://www.docker.com/" style="color: #9c07b6">Carbon Components Svelte</a> is a Svelte component library that implements the Carbon Design System, an open source design system by IBM. Design systems facilitate design and development through reuse, consistency, and extensibility.
-
+<br>
 
 ## Challenges we ran into
 
 Creating a DApp on Hedera Hashgraph posed challenges in navigating the intricacies of decentralized technology. Achieving optimal scalability and ensuring seamless integration with Hedera's consensus mechanism demanded meticulous development. Addressing security concerns and optimizing smart contracts for efficient execution required constant vigilance. Navigating evolving regulatory landscapes added complexity, and fostering community engagement necessitated strategic communication. Despite these challenges, our commitment to innovation and collaboration prevailed, resulting in a robust DApp that stands at the forefront of decentralized solutions, proudly overcoming obstacles in the dynamic landscape of blockchain development on Hedera Hashgraph.
+<br>
 
 ## Accomplishments that we're proud of
 
 Our DApp on Hedera Hashgraph stands as a beacon of innovation, achieving remarkable milestones. We've seamlessly integrated Hedera's lightning-fast consensus algorithm, ensuring secure and transparent transactions. Our commitment to user experience is reflected in the DApp's intuitive design, making decentralized interactions accessible to all. With a focus on scalability, our DApp effortlessly handles growing user bases and transaction volumes. We take pride in fostering a vibrant community through hackathons and meetups, empowering developers to explore and contribute. As a result, our DApp not only pioneers decentralized solutions but also champions a collaborative ecosystem on the cutting edge of blockchain technology.
+<br>
 
 ## What we learned
 
 Creating a DApp on Hedera Hashgraph has been a transformative journey. We've gained profound insights into decentralized technologies, mastering the unique aspects of Hedera's consensus algorithm. Navigating challenges in scalability, security, and regulatory compliance has honed our problem-solving skills. The importance of meticulous smart contract development and rigorous testing has become evident, ensuring robustness and resilience. Engaging with the Hedera community has enriched our understanding, fostering collaboration and feedback-driven iterations. The speed and fairness of Hedera's consensus mechanism have redefined our expectations for decentralized applications. Above all, the experience has instilled in us a deep appreciation for the dynamic nature of blockchain development and a commitment to pushing the boundaries of innovation in the decentralized landscape.
+
+
