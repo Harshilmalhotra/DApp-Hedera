@@ -1,0 +1,124 @@
+version: "3.7"
+services:
+  db:
+    image: kartoza/postgis:13.0
+    # image: postgres
+    restart: unless-stopped
+    volumes:
+      - pg:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=dev
+      - POSTGRES_PASSWORD=dev
+      - POSTGRES_DB=dev
+      - POSTGRES_PORT= 5432
+    ports:
+      - "5432:5432"
+    container_name: db
+
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL=dev@hashgraphhub.com
+  #     - PGADMIN_DEFAULT_PASSWORD=dev
+  #   restart: unless-stopped
+  #   volumes:
+  #     - pgadmin:/var/lib/pgadmin
+  #   ports:
+  #     - "5050:80"
+  #   container_name: pgadmin
+
+  api:
+    build:
+      context: ../app/backend
+      dockerfile: docker/docker_files/Dockerfile
+    restart: unless-stopped
+    command: >
+      bash -c "dockerize -wait tcp://db:5432
+      && python manage.py makemigrations
+      && python manage.py migrate
+      && python manage.py runscript config
+      && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ../app/backend:/code
+    ports:
+      - 8000:8000
+    env_file:
+      - ../.env
+    depends_on:
+      - db
+      - redis
+    container_name: api
+
+  redis:
+    image: redis:6-alpine
+    ports:
+      - "6379:6379"
+    container_name: redis
+
+  # celery:
+  #   restart: always
+  #   build:
+  #     context: ../app/backend
+  #     dockerfile: docker/docker_files/Dockerfile
+  #   command: >
+  #     bash -c "dockerize -wait tcp://api:8000
+  #     && celery -A hashgraphhub worker --loglevel=info --logfile=logs/celery.log"
+  #   env_file:
+  #     - ../.env
+  #   depends_on:
+  #     - redis
+  #     - api
+  #     - db
+  #   container_name: celery
+
+  # beat:
+  #   build:
+  #     context: ../app/backend
+  #     dockerfile: docker/docker_files/Dockerfile
+  #   command: >
+  #     bash -c "dockerize -wait tcp://api:8000
+  #     && celery -A hashgraphhub beat -l info"
+  #   env_file:
+  #     - ../.env
+  #   depends_on:
+  #     - redis
+  #     - api
+  #     - db
+  #   container_name: beat
+
+  # flower:
+  #   build:
+  #     context: ../app/backend
+  #     dockerfile: docker/docker_files/Dockerfile
+  #   command: celery -A hashgraphhub flower --broker=redis://redis:6379
+  #   ports:
+  #     - 5555:5555
+  #   env_file:
+  #     - ../.env
+  #   depends_on:
+  #     - api
+  #     - redis
+  #     - celery
+  #     - db
+  #   container_name: flower
+
+  app:
+    build:
+      context: ../app/frontend
+      dockerfile: docker/docker_files/Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ../app/frontend/src:/home/node/app/src
+      - ../app/frontend/static:/home/node/app/static
+      - ../app/frontend/vite.config.js:/home/node/app/vite.config.js
+      - ../app/frontend/tsconfig.json:/home/node/app/tsconfig.json
+      - ../app/frontend/svelte.config.js:/home/node/app/svelte.config.js
+    env_file:
+      - ../app/frontend/.env
+    ports:
+      - 4173:4173
+    stdin_open: true
+    container_name: app
+
+volumes:
+  pg:

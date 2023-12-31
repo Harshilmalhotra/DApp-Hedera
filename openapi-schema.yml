@@ -1,0 +1,325 @@
+openapi: 3.0.2
+info:
+  title: 'HashgraphHub demo api'
+  version: '1.0'
+paths:
+  api/v1/auth/users/:
+    post:
+      operationId: createUser
+      description: 'This end point is used to create a new user via the SPA. An activation email is sent as soon as a new user is created'
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCreated'
+          description: 'User created'
+      tags:
+        - 'User Authentication'
+  api/v1/auth/token/login/:
+    post:
+      operationId: userLogin
+      description: 'This end point is used to authenticate a user and return an auth token'
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserLogin'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserLogin'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserLogin'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserToken'
+          description: 'User token'
+      tags:
+        - 'User Authentication'
+
+  api/v1/auth/token/logout/:
+    post:
+      operationId: userLogout
+      description: 'This end point is used to log a user out. It deletes the auth token from the database'
+      parameters: []
+      security:
+        - bearerAuth: []
+      requestBody: []
+      responses:
+        '204':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserLogout'
+          description: 'User logged out'
+        '401':
+           $ref: '#/components/responses/UnauthorizedError'
+      tags:
+        - 'User Authentication'
+  
+  api/v1/account/:
+    post:
+      operationId: createAccount
+      description: 'This end point is used to create (import) a new user wallet via the SPA.'
+      parameters: []
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AccountCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AccountCreate'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountCreated'
+          description: 'Wallet imported'
+      tags:
+        - 'User Wallet'
+    get:
+      operationId: accountList
+      description: 'This end point is used to retrieve all user accounts via the SPA'
+      parameters: []
+      security:
+        - bearerAuth: []
+      requestBody: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AccountArray'
+          description: 'Account details'
+        '401':
+           $ref: '#/components/responses/UnauthorizedError'
+      tags:
+        - 'User Wallet'
+
+
+  api/v1/account/{id}:
+    get:
+      operationId: retrieveAccount
+      description: 'This end point is used to retrieve a specific account via the SPA'
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: 'Account id'
+          schema:
+            type: uuid
+      security:
+        - bearerAuth: []
+      requestBody: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountDetail'
+          description: 'Account info'
+        '401':
+           $ref: '#/components/responses/UnauthorizedError'
+      tags:
+        - 'User Wallet'
+
+ 
+components:
+  responses:
+    UnauthorizedError:
+      description: Authentication information is missing or invalid
+      headers:
+        WWW_Authenticate:
+          schema:
+            type: string
+            example: hjfghsdghoshvregikrhvgeirjgv
+            description: Token from /api/v1/auth/token/login/
+
+  securitySchemes:
+      bearerAuth:
+        type: http
+        scheme: bearer
+        bearerFormat: JWT 
+
+  schemas:
+    UserCreate:
+      type: object
+      properties:
+        first_name:
+          type: string
+          maxLength: 150
+          example: Roger
+          description: ''
+        last_name:
+          type: string
+          maxLength: 150
+          example: Redhat
+          description: ''
+        email:
+          type: string
+          format: email
+          maxLength: 254
+          example: roger@hashgraphhub.com
+          description: ''
+        password:
+          type: string
+          writeOnly: true
+          example: qwerty123
+          description: ''
+      required:
+      - first_name
+      - last_name
+      - email
+      - password
+  
+    UserCreated:
+      type: object
+      properties:
+        first_name:
+          type: string
+          maxLength: 150
+          example: Roger
+          description: ''
+        last_name:
+          type: string
+          maxLength: 150
+          example: Redhat
+          description: ''
+        email:
+          type: string
+          format: email
+          maxLength: 254
+          example: roger@hashgraphhub.com
+          description: ''
+
+    UserLogin:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          maxLength: 254
+          example: roger@hashgraphhub.com
+          description: ''
+        password:
+          type: string
+          writeOnly: true
+          example: qwerty123
+          description: ''
+      required:
+      - email
+      - password
+
+    UserLogout:
+      type: object
+
+    UserToken:
+      type: object
+      properties:
+        auth_token:
+          type: string
+          example: skjfvhudhvevbesbvjbvejrfbvfbv
+          description: ''
+
+    AccountCreate:
+      type: object
+      properties:
+        
+        external_id:
+          type: string
+          maxLength: 150
+          example: 0.0.11111
+          description: ''
+        private_key:
+          type: string
+          maxLength: 150
+          example: 1312312312312313212312312312312313212345645135456123123123
+          description: ''
+      required:
+      - external_id
+      - private_key
+
+    AccountDetail:
+      type: object
+      properties:
+        id:
+          type: uuid
+          example: 1234-5678-9101-1121
+        external_id:
+          type: string
+          maxLength: 150
+          example: 0.0.11111
+          description: ''
+
+      required:
+      - external_id
+      - id
+
+    AccountCreated:
+      type: object
+      properties:
+        id:
+          type: uuid
+          description: 'Account id'
+          example: 1234-5678-9101-1121
+        external_id:
+          type: string
+          maxLength: 150
+          example: 0.0.11111
+          description: ''
+        private_key:
+          type: string
+          maxLength: 150
+          example: 1312312312312313212312312312312313212345645135456123123123
+          description: ''
+      required:
+      - external_id
+      - private_key
+
+    AccountArray:
+      xml: 
+        wrapped: true
+        name: AccountArray
+      type: array
+      items:
+        type: object
+        xml:
+          name: 'item'
+        properties: 
+          id:
+            type: string
+            format: uuid
+            description: 'Account id'
+            example: 1234-5678-9101-1121
+          external_id:
+            type: string
+            maxLength: 150
+            example: 0.0.11111
+            description: ''
+          

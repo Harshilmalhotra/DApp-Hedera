@@ -1,0 +1,44 @@
+static_cdn/
+media_cdn/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# Environments
+.env
+.env.prod
+.env.dev
+.env.staging
+.venv
+# env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+*.dump
+
+# Frontend
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
