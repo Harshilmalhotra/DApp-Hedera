@@ -11,11 +11,15 @@ Imagine a decentralized world where digital interactions are secure, transparent
 
 ## Challenges we ran into
 
+Creating a DApp on Hedera Hashgraph posed challenges in navigating the intricacies of decentralized technology. Achieving optimal scalability and ensuring seamless integration with Hedera's consensus mechanism demanded meticulous development. Addressing security concerns and optimizing smart contracts for efficient execution required constant vigilance. Navigating evolving regulatory landscapes added complexity, and fostering community engagement necessitated strategic communication. Despite these challenges, our commitment to innovation and collaboration prevailed, resulting in a robust DApp that stands at the forefront of decentralized solutions, proudly overcoming obstacles in the dynamic landscape of blockchain development on Hedera Hashgraph.
+
 ## Accomplishments that we're proud of
 
 Our DApp on Hedera Hashgraph stands as a beacon of innovation, achieving remarkable milestones. We've seamlessly integrated Hedera's lightning-fast consensus algorithm, ensuring secure and transparent transactions. Our commitment to user experience is reflected in the DApp's intuitive design, making decentralized interactions accessible to all. With a focus on scalability, our DApp effortlessly handles growing user bases and transaction volumes. We take pride in fostering a vibrant community through hackathons and meetups, empowering developers to explore and contribute. As a result, our DApp not only pioneers decentralized solutions but also champions a collaborative ecosystem on the cutting edge of blockchain technology.
 
 ## What we learned
+
+Creating a DApp on Hedera Hashgraph has been a transformative journey. We've gained profound insights into decentralized technologies, mastering the unique aspects of Hedera's consensus algorithm. Navigating challenges in scalability, security, and regulatory compliance has honed our problem-solving skills. The importance of meticulous smart contract development and rigorous testing has become evident, ensuring robustness and resilience. Engaging with the Hedera community has enriched our understanding, fostering collaboration and feedback-driven iterations. The speed and fairness of Hedera's consensus mechanism have redefined our expectations for decentralized applications. Above all, the experience has instilled in us a deep appreciation for the dynamic nature of blockchain development and a commitment to pushing the boundaries of innovation in the decentralized landscape.
 
 ### What is Hedera?
 <a href="https://hedera.com/" style="color: #9c07b6">Hedera</a> is a decentralized, open-source, proof-of-stake public ledger that utilizes the leaderless, asynchronous Byzantine Fault Tolerance (aBFT) hashgraph consensus algorithm. It is governed by a collusion-resistant, decentralized council of leading enterprises, universities, and web3 projects from around the world.
