@@ -1,10 +1,9 @@
-## Inspiration <img src="https://github.com/Harshilmalhotra/DApp-Hedera/assets/111488708/24f4f6df-7ce3-4275-92b7-a2e80edb7023" height=25% width=25% align="right">
+## Inspiration <img src="https://github.com/Harshilmalhotra/DApp-Hedera/assets/111488708/24f4f6df-7ce3-4275-92b7-a2e80edb7023" height=20% width=20% align="right">
+
 
 
 Imagine a decentralized world where digital interactions are secure, transparent, and lightning-fast. Our DApp, built on Hedera Hashgraph, is at the forefront of this transformation. By leveraging the power of Hedera's fast and fair consensus algorithm, our decentralized application ensures trust and immutability in every transaction. From secure financial transactions to transparent supply chains, our DApp opens new possibilities for industries seeking efficiency and trust in a decentralized future.
-
-
-
+<br>
 
 ## What it does
 
