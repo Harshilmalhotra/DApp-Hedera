@@ -11,6 +11,18 @@ Our DApp based on Hedera Hashgraph leverages decentralized consensus to enable s
 
 ## How we built it
 
+#### Hedera
+<a href="https://hedera.com/" style="color: #9c07b6">Hedera</a> is a decentralized, open-source, proof-of-stake public ledger that utilizes the leaderless, asynchronous Byzantine Fault Tolerance (aBFT) hashgraph consensus algorithm. It is governed by a collusion-resistant, decentralized council of leading enterprises, universities, and web3 projects from around the world.
+
+#### Django
+<a href="https://www.djangoproject.com/" style="color: #9c07b6">Django</a> is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
+
+#### Docker
+<a href="https://www.docker.com/" style="color: #9c07b6">Docker</a> takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development – desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.
+
+#### Carbon Components Svelte
+<a href="https://www.docker.com/" style="color: #9c07b6">Carbon Components Svelte</a> is a Svelte component library that implements the Carbon Design System, an open source design system by IBM. Design systems facilitate design and development through reuse, consistency, and extensibility.
+
 
 ## Challenges we ran into
 
@@ -23,17 +35,3 @@ Our DApp on Hedera Hashgraph stands as a beacon of innovation, achieving remarka
 ## What we learned
 
 Creating a DApp on Hedera Hashgraph has been a transformative journey. We've gained profound insights into decentralized technologies, mastering the unique aspects of Hedera's consensus algorithm. Navigating challenges in scalability, security, and regulatory compliance has honed our problem-solving skills. The importance of meticulous smart contract development and rigorous testing has become evident, ensuring robustness and resilience. Engaging with the Hedera community has enriched our understanding, fostering collaboration and feedback-driven iterations. The speed and fairness of Hedera's consensus mechanism have redefined our expectations for decentralized applications. Above all, the experience has instilled in us a deep appreciation for the dynamic nature of blockchain development and a commitment to pushing the boundaries of innovation in the decentralized landscape.
-
-### What is Hedera?
-<a href="https://hedera.com/" style="color: #9c07b6">Hedera</a> is a decentralized, open-source, proof-of-stake public ledger that utilizes the leaderless, asynchronous Byzantine Fault Tolerance (aBFT) hashgraph consensus algorithm. It is governed by a collusion-resistant, decentralized council of leading enterprises, universities, and web3 projects from around the world.
-
-### What is Django?
-<a href="https://www.djangoproject.com/" style="color: #9c07b6">Django</a> is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
-
-### What is Docker?
-<a href="https://www.docker.com/" style="color: #9c07b6">Docker</a> takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development – desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.
-
-### What is Carbon Components Svelte?
-<a href="https://www.docker.com/" style="color: #9c07b6">Carbon Components Svelte</a> is a Svelte component library that implements the Carbon Design System, an open source design system by IBM. Design systems facilitate design and development through reuse, consistency, and extensibility.
-
-## What's next for DApp on Hedera Hashgraph
